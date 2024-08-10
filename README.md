@@ -6,7 +6,7 @@
 - 梅酒(`ume_liq`)
 - リキュール(`liq`)
 - ワイン(`waine`)
-- 焼き焼酎(`shochu`)
+- 焼酎(`shochu`)
 - クラフトビール(`craft_beer`)
 
 [参考](https://kurand.jp/)

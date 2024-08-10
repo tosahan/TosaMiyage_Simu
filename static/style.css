@@ -233,26 +233,6 @@ input[type="number"] {
     font-size: 14px;
 }
 
-/* .button {
-    display: inline-block;
-    width: 30vw;
-    height: 30vw;
-    max-width: 120px;
-    max-height: 120px;
-    background-color: #E9DFB5;
-    color: #e6372b;
-    text-decoration: none;
-    border-radius: 50%;
-    border: 3pt solid red;
-    text-align: center;
-    line-height: 30vw;
-    transition: all 0.3s ease;
-}
-
-.button:hover {
-    transform: scale(1.2);
-    background-color: #cdc49d;
-} */
 
 .button {
     display: inline-block;
@@ -330,6 +310,7 @@ input[type="number"] {
     margin: 5px 0; /* 要素間の余白を追加 */
     border-radius: 5px; /* 角を少し丸める */
     background-color: #E9DFB5; /* 背景色を追加（オプション） */
+    width: 320px;
 }
 
 /* 画面サイズが390px以下になった場合の処理 */

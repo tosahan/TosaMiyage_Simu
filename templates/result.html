@@ -29,7 +29,11 @@
             </div>
 			<br>
 			{% for x in sakes %}
-				<p class="border-box">{{ x[0] }} : {{ x[1] }}円</p>
+				<!-- <p class="border-box">{{ x[0] }} : {{ x[1] }}円</p> -->
+				<div class="border-box">
+					<p>{{ x[0] }}</p>
+					<p>{{ x[1] }}円</p>
+				</div>
 			{% endfor %}
 			<div class="text2">
 				<p>おつまみの合計購入金額 : {{ money[1] }} 円</p>
