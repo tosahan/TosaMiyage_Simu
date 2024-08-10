@@ -193,9 +193,9 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     /* max-width: 1200px; */
-    padding: 20px;
+    /* padding: 20px; */
     box-sizing: border-box;
 }
 
@@ -270,8 +270,9 @@ input[type="number"] {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    z-index: 2;
+    z-index: 1;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .rectangle {
@@ -279,17 +280,44 @@ input[type="number"] {
     height: 40px; /* 長方形の高さ */
     background-color: #a1a4b8; /* 長方形の色 */
     position: absolute; /* 円形ボタン内で絶対配置 */
-    z-index: 1
+    z-index: 10;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* .rectangle:hover {
+    transform: scale(1.2);
+    background-color: #a1a4b8;
 }
 
 .button:hover {
     transform: scale(1.2);
     background-color: #a1a4b8;
+} */
+
+
+/* .button:active .rectangle{
+    animation: rotate360 0.6s ease-in-out;
+    pointer-events: none;
 }
 
-.button:active {
-    animation: rotate360 0.6s ease-in-out; /* ボタンを押したときに360°回転 */
-    pointer-events: none; /* アニメーション中に他の操作を無効化 */
+.rectangle:active {
+    animation: rotate360 0.6s ease-in-out;
+    pointer-events: none;
+} */
+
+/* .button:active + .rectangle {
+    transform: rotate(360deg);
+} */
+
+.button:active + .rectangle {
+    /* transform: rotate(360deg); */
+    animation: rotate-rectangle 0.6s forwards ease-in-out;
+}
+
+@keyframes rotate-rectangle {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes rotate360 {
@@ -329,7 +357,7 @@ input[type="number"] {
     margin: 5px 0; /* 要素間の余白を追加 */
     border-radius: 5px; /* 角を少し丸める */
     background-color: #E9DFB5; /* 背景色を追加（オプション） */
-    width: 320px;
+    width: 80%;
     display: flex; /* 子要素を水平に並べる */
     justify-content: space-between; /* 要素の間隔を均等に配置 */
 }
