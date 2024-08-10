@@ -306,11 +306,13 @@ input[type="number"] {
 
 .border-box {
     border: 3px solid #e6372b; /* 黒色の2px幅の枠線 */
-    padding: 10px; /* 内側の余白を追加 */
+    padding: 0 10px;
     margin: 5px 0; /* 要素間の余白を追加 */
     border-radius: 5px; /* 角を少し丸める */
     background-color: #E9DFB5; /* 背景色を追加（オプション） */
     width: 320px;
+    display: flex; /* 子要素を水平に並べる */
+    justify-content: space-between; /* 要素の間隔を均等に配置 */
 }
 
 /* 画面サイズが390px以下になった場合の処理 */
