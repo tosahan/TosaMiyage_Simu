@@ -1,0 +1,411 @@
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #e6372b;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;  /* body全体の幅を100%に設定 */
+    /* max-width: 1200px; */
+    box-sizing: border-box;  /* パディングとボーダーを含めて幅を計算 */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* max-width: 1200px; */
+    padding: 0 10px;
+    background-color: #E9DFB5;
+    box-sizing: border-box;
+    height: 60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    display: flex;
+}
+
+.drawer_hidden {
+    display: none;
+}
+
+.drawer_open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    position: relative;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 5px;
+    background: #e6372b;
+    transition: 0.5s;
+    position: absolute;
+}
+
+.drawer_open span:before {
+    bottom: 8px;
+}
+
+.drawer_open span:after {
+    top: 8px;
+}
+
+#drawer_input:checked + .drawer_open span {
+    background: rgba(255, 255, 255, 0);
+}
+
+#drawer_input:checked + .drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#drawer_input:checked + .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.nav_content {
+    width: 80%;
+    /* max-width: 390px; */
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 99;
+    background: #E9DFB5;
+    transition: .5s;
+}
+
+#drawer_input:checked + .drawer_open + .nav_content {
+    left: 20%;
+}
+
+.nav_content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav_item {
+    padding: 15px;
+    text-align: center;
+}
+
+.nav_item a {
+    text-decoration: none;
+    color: #e6372b;
+    font-size: 22px;
+}
+
+.main_visual {
+    background-color: #e6372b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* max-width: 1200px; */
+    /* padding: 20px; */
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #e6372b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* max-width: 1200px; */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.info_gacha {
+    background-color: #E9DFB5;
+    /* max-width: 1160px;
+    padding: 16px 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+.result_gacha {
+    background-color: #E9DFB5;
+    /* max-width: 1160px;
+    padding: 16px 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text1, .text2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text2 {
+    padding: 0 12px;
+}
+
+h1 {
+    font-size: 4vw;
+    font-size: 28px;
+    color: #e6372b;
+    margin: 12px;
+}
+
+p {
+    font-size: 3.5vw;
+    font-size: 16px;
+    color: #e6372b;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* max-width: 1200px; */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form_gacha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    width: 100%;
+    /* max-width: 1160px; */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 5vw;
+    font-size: 22px;
+    color: #e6372b;
+}
+
+input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 4vw;
+    font-size: 14px;
+}
+
+/* .button {
+    display: inline-block;
+    width: 30vw;
+    height: 30vw;
+    max-width: 120px;
+    max-height: 120px;
+    background-color: #E9DFB5;
+    color: #e6372b;
+    text-decoration: none;
+    border-radius: 50%;
+    border: 3pt solid red;
+    text-align: center;
+    line-height: 30vw;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.2);
+    background-color: #cdc49d;
+} */
+
+.button {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    /* max-width: 200px;
+    max-height: 200px; */
+    background-color: #e8ebed;
+    font-size: 22px;
+    font-weight: bold;
+    color: #373737;
+    text-decoration: none;
+    border-radius: 50%;
+    border: 3pt solid #a1a4b8;
+    text-align: center;
+    line-height: 30vw;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 2
+}
+
+.rectangle {
+    width: 150px; /* 長方形の幅 */
+    height: 40px; /* 長方形の高さ */
+    background-color: #a1a4b8; /* 長方形の色 */
+    position: absolute; /* 円形ボタン内で絶対配置 */
+    z-index: 1
+}
+
+.button:hover {
+    transform: scale(1.2);
+    background-color: #a1a4b8;
+}
+
+.button:active {
+    animation: rotate360 0.6s ease-in-out; /* ボタンを押したときに360°回転 */
+    pointer-events: none; /* アニメーション中に他の操作を無効化 */
+}
+
+@keyframes rotate360 {
+    from {
+        transform: rotate(0deg); /* 初期状態：回転なし */
+    }
+    to {
+        transform: rotate(360deg); /* 最終状態：360°回転 */
+    }
+}
+
+/* アニメーション終了後にフォームを送信 */
+@keyframes submitAfterRotation {
+    100% {
+        visibility: hidden;
+    }
+}
+
+.button:active {
+    animation: rotate360 0.6s ease-in-out, submitAfterRotation 0.6s steps(1) forwards;
+}
+
+/* アニメーション終了後にフォームを送信 */
+.button:active + .submit-form {
+    animation: delayRedirect 0.6s forwards;
+}
+
+@keyframes delayRedirect {
+    100% {
+        visibility: visible;
+    }
+}
+
+.border-box {
+    border: 3px solid #e6372b; /* 黒色の2px幅の枠線 */
+    padding: 10px; /* 内側の余白を追加 */
+    margin: 5px 0; /* 要素間の余白を追加 */
+    border-radius: 5px; /* 角を少し丸める */
+    background-color: #E9DFB5; /* 背景色を追加（オプション） */
+}
+
+/* 画面サイズが390px以下になった場合の処理 */
+@media (max-width: 390px) {
+    body, .header, .container, .main_visual {
+        width: 390px;  /* 最小幅を390pxに固定 */
+    }
+
+    .info_gacha {
+        width: 350px;
+    }
+
+    .result_gacha {
+        width: 350px;
+    }
+
+    img {
+        width: 100%;
+        max-width: 390px;  /* 画像の最大幅も390pxに設定 */
+        height: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding: 0 40px;
+    }
+
+    .drawer_open {
+        display: none; /* 768px以上でハンバーガーメニューを非表示にする */
+    }
+
+    .nav_content {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        left: auto;
+        display: flex;
+    }
+
+    .nav_content ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .nav_item {
+        padding: 0 15px;
+    }
+
+    .nav_item a {
+        font-size: 22px;
+        color: #e6372b;
+    }
+
+    .container {
+        max-width: 1000px;
+    }
+
+    .info_gacha {
+        max-width: 900px;
+    }
+
+    .result_gacha {
+        max-width: 900px;
+    }
+
+    .form_gacha {
+        max-width: 900px;
+    }
+
+    .button {
+        width: 200x;
+        height: 200px;
+        line-height: 100px;
+    }
+}

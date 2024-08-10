@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ホームページ</title>
+	<link rel="stylesheet" href="/static/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="header">
+        <div class="logo">
+            <img src="/static/img/logo.png" alt="ロゴ" class="logo-img">
+        </div>
+        <input id="drawer_input" class="drawer_hidden" type="checkbox">
+        <label for="drawer_input" class="drawer_open"><span></span></label>
+        <nav class="nav_content">
+            <ul>
+                <li class="nav_item"><a href="#">メニュー1</a></li>
+                <li class="nav_item"><a href="#">メニュー2</a></li>
+                <li class="nav_item"><a href="#">メニュー3</a></li>
+            </ul>
+        </nav>
+    </header>
+	<div class="container">
+		<div class="result_gacha">
+			<div class="text1">
+                <h1>ガチャ  結果</h1>
+            </div>
+			<br>
+			{% for x in sakes %}
+				<p class="border-box">{{ x[0] }} : {{ x[1] }}円</p>
+			{% endfor %}
+			<div class="text2">
+				<p>おつまみの合計購入金額 : {{ money[1] }} 円</p>
+			</div>
+			<br>
+			{% for x in otsumamies %}
+				<p class="border-box">{{ x[0] }} : {{ x[1] }}円</p>
+			{% endfor %}
+			<div class="text2">
+				<p>合計購入金額 : {{ money[2] }} 円</p>
+			</div>
+			<br>
+			<div class="text2">
+				<p>予算の残り : {{ money[3] }} 円</p>
+			</div>
+			<a href="{{ url_for('index') }}">最初に戻る</a>
+		</div>
+</body>
+</html>

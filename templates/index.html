@@ -1,15 +1,53 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-<title>index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホームページ</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>Welcome!</h1>
-        <br>
-        <a href="{{ url_for('add_sake') }}">酒の追加</a>
-        <br>
-        <a href="{{ url_for('add_otsumami') }}">おつまみの追加</a>
-        <br>
-        <a href="{{ url_for('choose_budget') }}">Gacha!</a>
+    <header class="header">
+        <div class="logo">
+            <img src="/static/img/logo.png" alt="ロゴ" class="logo-img">
+        </div>
+        <input id="drawer_input" class="drawer_hidden" type="checkbox">
+        <label for="drawer_input" class="drawer_open"><span></span></label>
+        <nav class="nav_content">
+            <ul>
+                <li class="nav_item"><a href="#">メニュー1</a></li>
+                <li class="nav_item"><a href="#">メニュー2</a></li>
+                <li class="nav_item"><a href="#">メニュー3</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="main_visual">
+        <img src="/static/img/main_visual.png" alt="メインビジュアル" width="390"/>
+    </div>
+    <div class="container">
+        <div class="info_gacha">
+            <div class="text1">
+                <h1>高知お土産ガチャとは？</h1>
+            </div>
+            <div class="text2">
+                <p>高知お土産ガチャは、軍資金とお酒の本数を入力するだけでランダムにお土産を選べるツールです。</p>
+            </div>
+            <form action="{{ url_for('result') }}" method="GET" class="form_gacha" id="gachaForm">
+                <div class="form-group">
+                    <label for="budget">軍資金 (円)：</label>
+                    <input type="number" id="budget" name="budget" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="sakenum">お酒の本数：</label>
+                    <input type="number" id="sakenum" name="sakenum" min="0" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="button">ガチャる</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
