@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+<title>ガチャ 結果画面</title>
+</head>
+<body>
+<h1>ガチャ  結果</h1>
+<br>
+{% for x in selected_items %}
+<p>{{ x[0] }} : {{ x[1] }}</p>
+{% endfor %}
+        <br>
+        <a href="{{ url_for('index') }}">最初に戻る</a>
+</body>
+</html>
