@@ -82,6 +82,7 @@ def result():
             available_sakes.remove(sake)
         else:
             available_sakes.remove(sake) # 予算を超える場合は選択肢から外す
+    print("selected_sakes : ",selected_sakes)
 
     if len(selected_sakes) < sakenum:
         if selected_sakes:
@@ -94,7 +95,7 @@ def result():
         else:
             print("この予算では選択できるお酒がありません")
             flash("この予算では選択できるお酒がありません", "error")
-        return redirect(url_for("simulation_setting"))
+        return redirect(url_for("index"))
     else:
         spend4sake = total_price
         budget -= total_price
