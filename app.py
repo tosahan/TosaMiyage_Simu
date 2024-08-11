@@ -113,6 +113,7 @@ def result():
                     dp[x] = dp[x - otsumami_price] + otsumami_price
                     count[x] = count[x - otsumami_price] + [(otsumami_name, otsumami_price)]
 
+
         # 結果を表示するためのコード
         selected_otsumamies = count[budget]
         print("選んだお酒:", selected_sakes)
