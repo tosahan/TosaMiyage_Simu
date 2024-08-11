@@ -1,3 +1,10 @@
+
+.checkbox {
+    font-size: 28px;
+    color: #e6372b;
+}
+
+
 body {
     font-family: 'Noto Sans JP', sans-serif;
     background-color: #e6372b;
@@ -273,6 +280,7 @@ input[type="number"] {
     z-index: 1;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-top: 40px;
 }
 
 .rectangle {
@@ -282,6 +290,7 @@ input[type="number"] {
     position: absolute; /* 円形ボタン内で絶対配置 */
     z-index: 10;
     transition: transform 0.6s ease-in-out;
+    margin-top: 40px;
 }
 
 /* .rectangle:hover {
